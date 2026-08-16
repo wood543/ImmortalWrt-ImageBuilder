@@ -1,7 +1,3 @@
 #!/bin/sh
-uci set network.lan.proto=static
-uci set network.lan.ipaddr=192.168.1.1
-uci set network.lan.netmask=255.255.255.0
-uci commit network
-yes password | passwd root
+sed -i 's|^root:[^:]*:|root:$1$z8ugpi5P$XsTcVi1CaAVy3.6NJSKF90:|' /etc/shadow
 exit 0
